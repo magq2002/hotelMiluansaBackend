@@ -9,7 +9,6 @@ export class ReservationController {
 
   @Post()
   create(@Body() createReservationDto: CreateReservationDto) {
-    console.log ( createReservationDto )
     return this.reservationService.create(createReservationDto);
   }
 
@@ -20,16 +19,18 @@ export class ReservationController {
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.reservationService.findOne(+id);
+    return this.reservationService.findOne(id);
   }
 
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateReservationDto: UpdateReservationDto) {
-    return this.reservationService.update(+id, updateReservationDto);
+    console.log(id);
+    console.log(updateReservationDto)
+    return this.reservationService.update(id, updateReservationDto);
   }
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.reservationService.remove(+id);
+    return this.reservationService.remove(id);
   }
 }

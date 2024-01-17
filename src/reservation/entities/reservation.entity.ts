@@ -19,10 +19,10 @@ export class Reservation {
     room: number;
 
     @Prop({ required: true })
-    checkIn: Date;
+    checkIn: string;
 
     @Prop({ required: true })
-    checkOut: Date;
+    checkOut: string;
 
 }
 

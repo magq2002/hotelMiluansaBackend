@@ -22,15 +22,18 @@ export class ReservationService {
     return this.reservationModel.find();
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} reservation`;
+  async findOne(id: string) {
+    const reservation = await this.reservationModel.findById( id );
+    return reservation;
   }
 
-  update(id: number, updateReservationDto: UpdateReservationDto) {
-    return `This action updates a #${id} reservation`;
+  async update(id: string, updateReservationDto: UpdateReservationDto) {
+    const reservation = await this.reservationModel.findByIdAndUpdate( id, updateReservationDto )
+    return reservation;
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} reservation`;
+  async remove(id: string) {
+    const reservation = await this.reservationModel.findByIdAndDelete( id );
+    return reservation;
   }
 }
