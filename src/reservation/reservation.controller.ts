@@ -24,8 +24,6 @@ export class ReservationController {
 
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateReservationDto: UpdateReservationDto) {
-    console.log(id);
-    console.log(updateReservationDto)
     return this.reservationService.update(id, updateReservationDto);
   }
 

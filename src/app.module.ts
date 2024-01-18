@@ -4,6 +4,7 @@ import { MongooseModule } from '@nestjs/mongoose';
 
 import { AuthModule } from './auth/auth.module';
 import { ReservationModule } from './reservation/reservation.module';
+import { CheckInModule } from './check-in/check-in.module';
 
 
 @Module({
@@ -15,6 +16,8 @@ import { ReservationModule } from './reservation/reservation.module';
     AuthModule,
 
     ReservationModule,
+
+    CheckInModule,
     
   ],
   controllers: [],
